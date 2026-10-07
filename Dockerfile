@@ -1,5 +1,7 @@
 FROM eceasy/cli-proxy-api:latest
-WORKDIR /CLIProxyAPI
-RUN echo "{}" > /CLIProxyAPI/config.yaml
+
+RUN echo "{}" > /config.yaml && \
+    mkdir -p /CLIProxyAPI && \
+    echo "{}" > /CLIProxyAPI/config.yaml
+
 EXPOSE 8317
-CMD ["/CLIProxyAPI/cli-proxy-api"]
